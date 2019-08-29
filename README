@@ -1,0 +1,20 @@
+
+
+COMMANDS:
+
+The following commands are available, all are case independent:
+
+CD <directory path> (optional):
+moves the user to the specified directory
+If no parameter is given the current directory is shown
+If the directory does not exist an error is shown
+If the directory path is resolved to a file an error is shown
+Dir:
+Exit:
+when the user types "exit" the command prompt is closed with a cheery "Goodbye!"
+MkDir:
+MkFile <file name> <file text> (optional):
+creates a file in the current directory, optional with the text in the second parameter added to the file.
+If no parameters are entered an error occurs
+If any parameter has a "\" or "/" an error occurs
+
