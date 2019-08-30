@@ -22,6 +22,7 @@ MkFile <file name> <file text> (optional):
 Ver /w (optional):
     shows the Windows version of the computer the command prompt is running on
     the parameter "/w" shows the team responsible for creating the command prompt.
+    If another parameter is used the following error is shown: "unknown parameter, please use /w to get information about the team."
 
 
 
