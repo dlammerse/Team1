@@ -78,7 +78,7 @@ public class CmdMkFileTest extends CmdTest {
         System.out.println(numbersOfFilesBeforeTest);
         System.out.println(drive.getCurrentDirectory().getNumberOfContainedFiles());
         assertEquals(numbersOfFilesBeforeTest, drive.getCurrentDirectory().getNumberOfContainedFiles());
-//        TestHelper.assertContains("syntax of the command is incorrect", testOutput.toString());
+        TestHelper.assertContains("there where no parameters added to mkFile command", testOutput.toString());
     }
 
     @Test
