@@ -17,6 +17,11 @@ Exit:
 MkDir:
 MkFile <file name> <file text> (optional):
     creates a file in the current directory, optional with the text in the second parameter added to the file.
-    If no parameters are entered an error occurs
+    If no parameters are entered an error occurs: "there where no parameters added to mkFile command, so we cannot create it"
     If any parameter has a "\" or "/" an error occurs
+Ver /w (optional):
+    shows the Windows version of the computer the command prompt is running on
+    the parameter "/w" shows the team responsible for creating the command prompt.
+
+
 
