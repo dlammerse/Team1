@@ -21,6 +21,15 @@ public class CmdVersie extends Command {
 
     @Override
     public void execute(IOutputter outputter) {
-        outputter.printLine(System.getProperty("os.name"));
+        if(this.getParameterCount() > 0) {
+            String parameter = this.getParameterAt(0);
+            if(parameter.equals("/w")){
+                outputter.printLine("Team UNICORN!! :D");
+            } else {
+                outputter.printLine("unknown parameter, please use /w to get information about the team.");
+            }
+        } else {
+            outputter.printLine(System.getProperty("os.name"));
+        }
     }
 }
