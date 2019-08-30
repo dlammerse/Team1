@@ -14,16 +14,18 @@ public class CmdClearTest extends CmdTest {
     }
 
     @Test
-    public void CmdClear_WithoutParameters()
+    public void CmdClear_WithoutParameter()
     {
         executeCommand("clear");
+        TestHelper.assertContains("", testOutput);
         TestHelper.assertContains("", testOutput);
     }
 
     @Test
     public void CmdClear_WithParameter()
     {
-        executeCommand("clear");
+        executeCommand("clear bla");
+        TestHelper.assertContains("", testOutput);
         TestHelper.assertContains("", testOutput);
     }
 }
