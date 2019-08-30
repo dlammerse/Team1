@@ -1,10 +1,8 @@
 package command.library;
 
-import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 import helpers.TestHelper;
-import filesystem.File;
 
 public class CmdVersieTest extends CmdTest {
     @Before
