@@ -23,7 +23,7 @@ public class CmdVersie extends Command {
     public void execute(IOutputter outputter) {
         if(this.getParameterCount() > 0) {
             String parameter = this.getParameterAt(0);
-            if(parameter.equals("/w")){
+            if(parameter.equals("/w") || parameter.equals("/W")){
                 outputter.printLine("Team UNICORN!! :D");
             } else {
                 outputter.printLine("unknown parameter, please use /w to get information about the team.");
