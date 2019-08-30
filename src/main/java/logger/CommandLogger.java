@@ -9,7 +9,7 @@ public class CommandLogger {
     public void logCommand(String command, IOutputter outputter) {
         try{
             //Log the command in the log file
-            String path = System.getProperty("user.dir");
+            String path = System.getProperty("user.dir") + "\\commandLogs.txt";
             File file = new File(path);
 
             FileWriter fw = new FileWriter(file.getAbsoluteFile(), true);
