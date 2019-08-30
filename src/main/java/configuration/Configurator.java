@@ -46,8 +46,9 @@ public class Configurator {
 		// Add file for logging if that file does not exist yet
 		try{
 			String content = "This is the content to write into create file";
-			String path="D:\\Users\\commandLogs.txt";
-			File file = new File(path);
+            String path = System.getProperty("user.dir") + "\\commandLogs.txt";
+
+            File file = new File(path);
 
 			if (!file.exists()) {
 				file.createNewFile();
