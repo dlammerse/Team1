@@ -24,5 +24,10 @@ Ver /w (optional):
     the parameter "/w" shows the team responsible for creating the command prompt.
     If another parameter is used the following error is shown: "unknown parameter, please use /w to get information about the team."
 
+LOGGING
+    To enable OPs to know what happens in the command prompt, a log file is created at first startup to which all user
+    entered commands are written. This log file is called commandlogs.txt
+
+
 
 
