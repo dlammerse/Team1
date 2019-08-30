@@ -15,6 +15,8 @@ import command.library.CommandFactory;
 
 import console.Console;
 
+import java.io.File;
+
 /**Configures the system. Contains the method main().
  */
 public class Configurator {
@@ -39,9 +41,25 @@ public class Configurator {
 		commandInvoker.setCommands(factory.getCommandList());
 		IExecuteCommand invoker = commandInvoker;
 		
+
+
+		// Add file for logging if that file does not exist yet
+		try{
+			String content = "This is the content to write into create file";
+			String path="D:\\Users\\commandLogs.txt";
+			File file = new File(path);
+
+			if (!file.exists()) {
+				file.createNewFile();
+			}
+		}
+		catch(Exception e){
+			System.out.println(e);
+		}
+
 		// Setup console for input and output
 		Console console = new Console(invoker, drive);
-		
+
 		// Start console
 		console.processInput();
 	}

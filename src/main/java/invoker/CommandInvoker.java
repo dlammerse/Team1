@@ -8,11 +8,11 @@ package invoker;
 
 import interfaces.IExecuteCommand;
 import interfaces.IOutputter;
-
 import java.util.ArrayList;
 import java.util.Iterator;
 
 import command.framework.Command;
+import logger.CommandLogger;
 
 /**Invokes commands from a command string passed.<br>
  * Command-Pattern: Invoker<br>
@@ -64,20 +64,27 @@ public class CommandInvoker implements IExecuteCommand {
 						return;
 					}
 					cmd.execute(outputter);
+					new CommandLogger().logCommand(command, outputter);
+
 					return;
 				}
 			}
-			outputter.printLine("\'" + cmdName + "\' is not recognized as an internal or external command,");
-			outputter.printLine("operable program or batch file.");
+			String noValidCommandMessage = "\'" + cmdName + "\' is not recognized as an internal or external command, \noperable program or batch file. ";
+			outputter.printLine(noValidCommandMessage);
+			new CommandLogger().logCommand(noValidCommandMessage, outputter);
 		}
 		catch(Exception e) {
 			if(e.getMessage() != null) {
 				outputter.printLine("Unexpected exception while execution command: " + e.getMessage());
+				new CommandLogger().logCommand("Unexpected exception while execution command: " + e.getMessage(), outputter);
+
 			}
 			else {
 				outputter.printLine("Unknown exception caught");
 				outputter.printLine(e.toString());
 				e.printStackTrace();
+				new CommandLogger().logCommand("Unknown exception caught" + e.toString(), outputter);
+
 			}
 		}
 	}
