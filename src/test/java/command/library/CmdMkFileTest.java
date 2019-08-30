@@ -80,4 +80,32 @@ public class CmdMkFileTest extends CmdTest {
         assertEquals(numbersOfFilesBeforeTest, drive.getCurrentDirectory().getNumberOfContainedFiles());
 //        TestHelper.assertContains("syntax of the command is incorrect", testOutput.toString());
     }
+
+    @Test
+    public void CmdMkFile_WithFileName_WithBackslashes_isNotCreated()
+    {
+        // given
+        final String newFileName = "testFile//";
+        final String newFileContent = "ThisIsTheContent";
+
+        // when
+        executeCommand("mkfile " + newFileName + " " + newFileContent);
+
+        // then
+        assertEquals(numbersOfFilesBeforeTest, drive.getCurrentDirectory().getNumberOfContainedFiles());
+    }
+
+    @Test
+    public void CmdMkFile_WithFileContent_WithBackslashes_isNotCreated()
+    {
+        // given
+        final String newFileName = "testFile";
+        final String newFileContent = "ThisIsTheContent//";
+
+        // when
+        executeCommand("mkfile " + newFileName + " " + newFileContent);
+
+        // then
+        assertEquals(numbersOfFilesBeforeTest, drive.getCurrentDirectory().getNumberOfContainedFiles());
+    }
 }
